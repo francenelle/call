@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom/cjs/react-router-dom.min';
+import Callvideo from './pages/Callvideo';
+import Contact from './pages/Contact';
+import Home from './pages/Home';
+import Messages from './pages/Messages';
+import NotFound from './pages/NotFound';
+import Notifications from './pages/Notifications';
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+
+        <Switch>
+          <Route path='/' exact component={Home}/>
+          <Route path='/callvideo' exact component={Callvideo}/>
+          <Route path='/notification' exact component={Notifications}/>
+          <Route path='/message' exact component={Messages}/>
+          <Route path='/contact' exact component={Contact}/>
+          <Route component={NotFound} />
+        </Switch>
+      
+      
+      </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;

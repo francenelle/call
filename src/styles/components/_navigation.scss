@@ -1,0 +1,27 @@
+.navigation{
+    display: table-caption;
+    margin: 0;
+    height: 100%;
+    width: 7%;
+    padding-top: 15em;
+
+    background-color: white;
+    border-right: solid 0.1em black;
+    position: fixed;
+
+    a {
+        margin-left: 1em;
+        margin-right: 0em;
+        position: relative;
+        font-size: 2em;
+    }
+
+    .nav-active {
+    background-color:rgba(0, 0, 255, 0.5);
+    }
+
+    
+    
+
+}
+

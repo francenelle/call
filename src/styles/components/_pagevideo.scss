@@ -1,0 +1,23 @@
+.pagevideo {
+    display: -webkit-box;
+    height: 100%;
+    width: 100%;
+
+    .callvideo{
+        margin-left: 8%;
+        width: 80%;
+    }
+    .invitepeople p{
+        display: inline;
+    }
+
+    video{
+        background-color: red;
+        margin-left: 1%;
+        border-radius: 30px;
+        width: 85%;
+        height: 65%;
+    }
+
+}
+
