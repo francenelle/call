@@ -1,0 +1,19 @@
+$primary-color: #239782;
+// $secondary-color: #239782;
+
+$dark-black: #343434;
+
+$light-grey-color: #eae8e8;
+$red-color: #eb1d27;
+$dark-red-color: #d31017;
+
+$hover-color: adjust-hue(
+  $color: $primary-color,
+  $degrees: 10,
+);
+$text-color: #252b42;
+$second-text-color: #737373;
+$light-gray-1: #fafafa;
+
+$disabled-element-color: #8ec2f2;
+$dark-background-color: #252b42;

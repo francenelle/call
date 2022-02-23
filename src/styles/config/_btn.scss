@@ -1,0 +1,32 @@
+.btn {
+  font-size: $btn-font-size;
+  line-height: $btn-line-height;
+  font-weight: $btn-font-weight;
+  border-radius: $btn-border-radius;
+  padding: $btn-padding;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  &--primary {
+    color: white;
+    background-color: $primary-color;
+
+    &:hover {
+      background-color: $hover-color;
+    }
+  }
+
+  &--white {
+    color: $dark-background-color;
+    background-color: white;
+
+    &:hover {
+      background-color: $hover-color;
+    }
+  }
+}

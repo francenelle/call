@@ -1,0 +1,31 @@
+.form {
+  &__group {
+    display: grid;
+    grid-column: 1fr;
+    row-gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  &__label {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.7;
+  }
+
+  &__controls {
+    height: 50px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    border: 1px solid #e5e5e5;
+    outline: none;
+
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: 2;
+    color: #737373;
+  }
+
+  text-area {
+    min-height: 150px;
+  }
+}
