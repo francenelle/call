@@ -1,21 +1,181 @@
 .pagevideo {
-  display: -webkit-box;
-  height: 100%;
-  width: 100%;
+  display: flex;
+  height: 100vh;
+
+  .content {
+    flex: 1;
+    display: flex;
+    padding: 10px 0;
+  }
 
   .callvideo {
-    margin-left: 8%;
-    width: 80%;
-  }
-  .invitepeople p {
-    display: inline;
+    flex: 1;
+    padding: 10px;
+
+    // border: 2px solid green;
   }
 
-  video {
-    background-color: red;
-    margin-left: 1%;
-    border-radius: 30px;
-    width: 85%;
-    height: 65%;
+  .header {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba($color: #000000, $alpha: 0.09);
+    padding-bottom: 10px;
+    .back {
+      background-color: #f6f7fb;
+      color: rgba($color: #000000, $alpha: 0.25);
+      padding: 5px 10px;
+      border-radius: 5px;
+      margin-right: 15px;
+    }
+
+    .class {
+      background-color: rgba($color: $primary-color, $alpha: 0.25);
+      color: $primary-color;
+      padding: 5px 15px;
+      border-radius: 45px;
+      font-size: 0.8rem;
+      margin-left: 20px;
+    }
+  }
+
+  .aside {
+    flex: none;
+    width: 300px;
+    background: #f2f4f7;
+    border-radius: 10px;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+
+    .cta {
+      background: white;
+      display: grid;
+      grid-template-columns: auto auto;
+      padding: 5px;
+      column-gap: 5px;
+      border-radius: 0.85em;
+      .btn {
+        font-size: 0.8rem;
+        color: rgba($color: #000000, $alpha: 0.25);
+        background: transparent;
+
+        &.active {
+          background: rgba($color: $primary-color, $alpha: 0.25);
+          color: $primary-color;
+        }
+      }
+    }
+
+    .chat {
+      flex: 1;
+      font-size: 0.8rem;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+
+      &__header {
+        display: flex;
+        align-items: center;
+        padding: 20px 0;
+        color: rgba($color: #000000, $alpha: 0.25);
+
+        hr {
+          opacity: 0.25;
+        }
+
+        span {
+          margin: 0 10px;
+          font-weight: 600;
+        }
+      }
+
+      &__profile {
+        height: 40px;
+        width: auto;
+        clip-path: circle();
+        margin-right: 10px;
+      }
+
+      &__message {
+        background: white;
+        padding: 10px 20px;
+        border-radius: 10px;
+        margin-top: 10px;
+      }
+
+      &__body {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        overflow: auto;
+      }
+      &__item {
+        display: flex;
+        margin-bottom: 20px;
+
+        &.send {
+          align-self: flex-end;
+          text-align: right;
+
+          .chat__message {
+            text-align: left;
+            background: #e4e9f0;
+          }
+        }
+      }
+
+      &__footer {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        column-gap: 10px;
+        width: 100%;
+        color: rgba($color: #000000, $alpha: 0.25);
+
+        // display: flex;
+        background-color: white;
+
+        .btn {
+          padding: 7px 10px;
+          border-radius: 5px;
+        }
+
+        input {
+          flex: 1;
+          height: 30px;
+          border: none;
+          padding-left: 5px;
+          border-left: 1px solid black;
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+          border-color: rgba($color: #000000, $alpha: 0.25);
+        }
+
+        padding: 10px;
+        border-radius: 10px;
+      }
+    }
   }
 }
+
+// .pagevideo {
+//   display: -webkit-box;
+//   height: 100%;
+//   width: 100%;
+
+//   .callvideo {
+//     margin-left: 8%;
+//     width: 80%;
+//   }
+//   .invitepeople p {
+//     display: inline;
+//   }
+
+//   video {
+//     background-color: red;
+//     margin-left: 1%;
+//     border-radius: 30px;
+//     width: 85%;
+//     height: 65%;
+//   }
+// }

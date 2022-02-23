@@ -21,6 +21,15 @@
     }
   }
 
+  &--secondary {
+    color: white;
+    background-color: $secondary-color;
+
+    &:hover {
+      background-color: adjust-hue($color: $secondary-color, $degrees: -10);
+    }
+  }
+
   &--white {
     color: $dark-background-color;
     background-color: white;
