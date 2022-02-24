@@ -1,7 +1,7 @@
 .pagevideo {
   display: flex;
   height: 100vh;
-  // overflow: hidden;
+  overflow: hidden;
 
   .content {
     flex: 1;
@@ -41,7 +41,8 @@
     .main {
       display: flex;
       flex-direction: column;
-      flex: 1;
+      flex: 1 0;
+      overflow: auto;
 
       .cta {
         display: flex;
@@ -110,14 +111,36 @@
           color: white;
           padding: 5px 20px;
           border-radius: 12px;
+          width: 60%;
+          text-align: center;
         }
 
         .participants {
           position: absolute;
-          top: 10px;
-          right: 20px;
+          top: 5px;
+          right: 5px;
           color: white;
+          height: 95%;
+          padding: 10px;
+          overflow-y: auto;
           // border: 2px solid red;
+
+          /* width */
+          &::-webkit-scrollbar {
+            height: 1px !important;
+            width: 1px !important;
+          }
+
+          /* Handle */
+          &::-webkit-scrollbar-thumb {
+            background: transparent;
+            border-radius: 10px;
+          }
+
+          /* Handle on hover */
+          &::-webkit-scrollbar-thumb:hover {
+            background: adjust-hue($color: $primary-color, $degrees: 10);
+          }
         }
 
         .participant {
@@ -263,7 +286,7 @@
 
   .aside {
     flex: none;
-    width: 300px;
+    width: 280px;
     background: #f2f4f7;
     border-radius: 10px;
     padding: 10px 20px;
@@ -278,7 +301,7 @@
       column-gap: 5px;
       border-radius: 0.85em;
       .btn {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
         color: rgba($color: #000000, $alpha: 0.25);
         background: transparent;
 
@@ -298,6 +321,7 @@
       &__title {
         padding: 10px 10px;
         border-bottom: 1px solid white;
+        font-size: 0.8rem;
       }
 
       &__items {
@@ -402,10 +426,11 @@
       }
 
       &__footer {
+        // padding: 5px;
         display: grid;
         grid-template-columns: auto 1fr auto;
         align-items: center;
-        column-gap: 10px;
+        column-gap: 5px;
         width: 100%;
         color: rgba($color: #000000, $alpha: 0.25);
 
@@ -426,6 +451,7 @@
           border-top-left-radius: 0;
           border-bottom-left-radius: 0;
           border-color: rgba($color: #000000, $alpha: 0.25);
+          font-size: 0.8rem;
         }
 
         padding: 10px;
