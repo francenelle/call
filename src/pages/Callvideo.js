@@ -38,9 +38,10 @@ const Callvideo = () => {
                     <p>Invite people</p>
                 </div>
          
-                <div className="video">
-                    <video playsInline muted ref={myVideo} autoPlay/>
+                <div className="myvideo">
+                    <video playsInline muted ref={myVideo} autoPlay />
                 </div>
+               
                 <Controlvideo />
             </div>
         </div>
