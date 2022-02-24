@@ -1,6 +1,7 @@
 .pagevideo {
   display: flex;
   height: 100vh;
+  // overflow: hidden;
 
   .content {
     flex: 1;
@@ -11,30 +12,252 @@
   .callvideo {
     flex: 1;
     padding: 10px;
-
-    // border: 2px solid green;
-  }
-
-  .header {
     display: flex;
-    align-items: center;
-    border-bottom: 1px solid rgba($color: #000000, $alpha: 0.09);
-    padding-bottom: 10px;
-    .back {
-      background-color: #f6f7fb;
-      color: rgba($color: #000000, $alpha: 0.25);
-      padding: 5px 10px;
-      border-radius: 5px;
-      margin-right: 15px;
+    flex-direction: column;
+
+    .header {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid rgba($color: #000000, $alpha: 0.09);
+      padding-bottom: 10px;
+      .back {
+        background-color: #f6f7fb;
+        color: rgba($color: #000000, $alpha: 0.25);
+        padding: 5px 10px;
+        border-radius: 5px;
+        margin-right: 15px;
+      }
+
+      .class {
+        background-color: rgba($color: $primary-color, $alpha: 0.25);
+        color: $primary-color;
+        padding: 5px 15px;
+        border-radius: 45px;
+        font-size: 0.8rem;
+        margin-left: 20px;
+      }
     }
 
-    .class {
-      background-color: rgba($color: $primary-color, $alpha: 0.25);
-      color: $primary-color;
-      padding: 5px 15px;
-      border-radius: 45px;
-      font-size: 0.8rem;
-      margin-left: 20px;
+    .main {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+
+      .cta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        margin: 10px 0;
+
+        .record {
+          cursor: pointer;
+
+          svg {
+            color: $red-color;
+            font-size: 20px;
+          }
+        }
+
+        .invitepeople {
+          color: green;
+          cursor: pointer;
+
+          svg {
+            color: green;
+            font-size: 20px;
+            margin-right: 10px;
+          }
+        }
+      }
+
+      .video {
+        border: 1px solid rgba($color: #000000, $alpha: 0.25);
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.25),
+          rgba(0, 0, 0, 0.55)
+        );
+
+        border-radius: 10px;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+
+        video {
+          // width: 100%;
+          height: 100%;
+        }
+
+        .you {
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          background-color: #8d827e;
+          color: white;
+          padding: 5px 20px;
+          border-radius: 12px;
+        }
+
+        .message {
+          position: absolute;
+          bottom: 10px;
+          margin: 0 auto;
+          background-color: #8d827e;
+          color: white;
+          padding: 5px 20px;
+          border-radius: 12px;
+        }
+
+        .participants {
+          position: absolute;
+          top: 10px;
+          right: 20px;
+          color: white;
+          // border: 2px solid red;
+        }
+
+        .participant {
+          position: relative;
+          &__image {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            border: 2px solid white;
+          }
+
+          .icon {
+            position: absolute;
+            bottom: 0;
+            right: -10px;
+            background: $red-color;
+            padding: 5px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          &--speak {
+            .icon {
+              background: green;
+            }
+          }
+        }
+      }
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 25px;
+      padding-top: 25px;
+      border-top: 1px solid rgba($color: #000000, $alpha: 0.25);
+
+      .volume {
+        &:hover {
+          background: transparent;
+          color: initial;
+        }
+        .icon {
+          display: flex;
+          align-items: center;
+          &:hover {
+            background: transparent;
+            color: initial;
+          }
+        }
+
+        input {
+          height: 5px;
+        }
+
+        .slider {
+          -webkit-appearance: none;
+          width: 100%;
+          height: 5px;
+          background: $primary-color;
+          outline: none;
+          opacity: 0.7;
+          -webkit-transition: 0.2s;
+          transition: opacity 0.2s;
+        }
+
+        .slider:hover {
+          opacity: 1;
+        }
+
+        .slider::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          background: $primary-color;
+          cursor: pointer;
+        }
+
+        .slider::-moz-range-thumb {
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          background: $primary-color;
+          cursor: pointer;
+        }
+      }
+
+      .leave,
+      .volume {
+        margin: 0 10px;
+        text-align: center;
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        row-gap: 10px;
+        color: rgba($color: #000000, $alpha: 0.25);
+        cursor: pointer;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+
+      .icon {
+        border: 1px solid rgba($color: #000000, $alpha: 0.25);
+        padding: 10px 12px;
+        border-radius: 10px;
+        font-size: 20px;
+
+        &.selected,
+        &:hover {
+          color: white;
+          background-color: $primary-color;
+          border-color: $primary-color;
+        }
+      }
+
+      .options {
+        font-weight: 600;
+        display: flex;
+
+        & > div {
+          margin: 0 10px;
+          text-align: center;
+          display: grid;
+          grid-template-columns: 1fr;
+          justify-content: center;
+          row-gap: 10px;
+          color: rgba($color: #000000, $alpha: 0.25);
+          cursor: pointer;
+
+          &:hover {
+            color: $primary-color;
+          }
+        }
+      }
     }
   }
 
@@ -63,6 +286,60 @@
           background: rgba($color: $primary-color, $alpha: 0.25);
           color: $primary-color;
         }
+      }
+    }
+
+    .stat {
+      color: white;
+      background: $primary-color;
+      border-radius: 10px;
+      margin-top: 10px;
+
+      &__title {
+        padding: 10px 10px;
+        border-bottom: 1px solid white;
+      }
+
+      &__items {
+        padding: 10px 10px;
+      }
+
+      &__item {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 10px;
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 10px;
+
+        &:hover {
+          background: #3aa18e;
+        }
+      }
+
+      &__name {
+        font-weight: 200;
+      }
+
+      &__percent {
+        font-weight: 600;
+      }
+
+      &__progress {
+        height: 5px;
+        background: rgba(255, 255, 255, 0.25);
+        border-radius: 45px;
+
+        &bar {
+          background: white;
+          height: 100%;
+          border-radius: 45px;
+        }
+      }
+
+      &__info {
+        display: flex;
+        justify-content: space-between;
       }
     }
 
